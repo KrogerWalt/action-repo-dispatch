@@ -18,6 +18,10 @@ inputs:
     description: The name of the workflow yaml files to run.
     required: false
     default: 'build.yml'
+  branch:
+    description: The name of the branch to use in the workflow.
+    required: false
+    default: 'main'
 runs:
   using: docker
   image: Dockerfile

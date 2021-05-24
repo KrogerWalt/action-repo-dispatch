@@ -11,6 +11,7 @@ This is a GitHub Action to start a workflow in a different repository.
 | `user`    | The user who owns the PAT.                                                   | `string` | `true`   | N/A         |
 | `PAT`     | A Personal Access Token belonging to the user supplied.                      | `string` | `true`   | N/A         |
 | `workflow` | The name of the .yml file for which workflow you want started.                 | `string` | `false`  | `build.yml` |
+| `branch`  | The name of the branch to use with the workflow you want started.             | `string` | `false`  | `main`      |
 
 
 ## Example
