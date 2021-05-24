@@ -1,0 +1,26 @@
+name: GitHub Actions Repository Dispatch
+description: When you need to start a job in another repo as part of your workflow.
+author: Walt Moorhouse
+inputs:
+  owner:
+    description: The owner of the repo.
+    required: true
+  repo:
+    description: The name of the repo.
+    required: true
+  user:
+    description: A user with access to the repo in which you want to start the workflow.
+    required: true
+  PAT:
+    description: The User's Personal Access Token with Repo Access
+    required: true
+  workflow:
+    description: The name of the workflow yaml files to run.
+    required: false
+    default: 'build.yml'
+runs:
+  using: docker
+  image: Dockerfile
+branding:
+  icon: arrow-right
+  color: green
