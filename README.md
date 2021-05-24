@@ -2,6 +2,10 @@
 
 This is a GitHub Action to start a workflow in a different repository.
 
+## Version Tags
+v1 - always succeeds, but shows the error message in the logs
+v2 - fails the job if the call fails, but swallows the error message
+
 ## Inputs
 
 |   NAME    |                            DESCRIPTION                                       |   TYPE   | REQUIRED |   DEFAULT   |
@@ -10,8 +14,8 @@ This is a GitHub Action to start a workflow in a different repository.
 | `repo`    | The name of the repo. So for this project it would be `action-repo-dispatch` | `string` | `true`   | N/A         |
 | `user`    | The user who owns the PAT.                                                   | `string` | `true`   | N/A         |
 | `PAT`     | A Personal Access Token belonging to the user supplied.                      | `string` | `true`   | N/A         |
-| `workflow` | The name of the .yml file for which workflow you want started.                 | `string` | `false`  | `build.yml` |
-| `branch`  | The name of the branch to use with the workflow you want started.             | `string` | `false`  | `main`      |
+| `workflow`| The name of the .yml file for which workflow you want started.               | `string` | `false`  | `build.yml` |
+| `branch`  | The name of the branch to use with the workflow you want started.            | `string` | `false`  | `main`      |
 
 
 ## Example
@@ -31,7 +35,7 @@ jobs:
       
 ... build work for my local repo
 
-      - uses: KrogerWalt/action-repo-dispatch@v1
+      - uses: KrogerWalt/action-repo-dispatch@v2
         with:
           owner: KrogerWalt
           repo: AmazingApp
